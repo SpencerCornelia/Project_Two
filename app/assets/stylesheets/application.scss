@@ -1,0 +1,73 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+
+ // COLOR PALLETE
+ $color-primary: #2C3E50;
+ $color-secodary: #617487 ;
+ $color-tertiary: #42586E ;
+ $white: #FFF;
+
+ $color-primary-rgba: rgba( 44, 62, 80,1);
+ $color-secodary-rgba: rgba( 97,116,135,1);
+ $color-tertiary-rgba: rgba( 66, 88,110,1);
+
+ // Navbar/Sidebar
+ .navbar, .navbar-fixed-top, .navbar-inverse, .navbar-inverse .navbar-nav {
+   background-color: $color-primary;
+   color: $white;
+
+   li a {
+     color: $white;
+   }
+ }
+
+ body {
+           padding-top: 50px;
+           position: relative;
+       }
+
+       pre {
+           tab-size: 8;
+       }
+
+       @media screen and (max-width: 768px) {
+           .side-collapse-container{
+               width:100%;
+               position:relative;
+               left:0;
+               transition:left .4s;
+           }
+           .side-collapse-container.out{
+               left:200px;
+           }
+           .side-collapse {
+               top:50px;
+               bottom:0;
+               left:0;
+               width:200px;
+               position:fixed;
+               overflow:hidden;
+               transition:width .4s;
+           }
+           .side-collapse.in {
+               width:0;
+           }
+       }
+
