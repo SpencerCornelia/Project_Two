@@ -1,0 +1,9 @@
+SHOW PAGE
+
+
+<% @room.buttons.each do |b| %>
+	<div class="btn btn-sm btn-primary col-sm-2">
+		<%= b.condition %>
+		<%= b.votes %>
+	</div>
+<% end %>

@@ -23,6 +23,11 @@ class RoomsController < ApplicationController
 		end
 	end
 
+	def show
+		set_room
+		render :show
+	end
+
 	def edit
 	end
 
@@ -30,6 +35,12 @@ class RoomsController < ApplicationController
 	end
 
 	def destroy
+	end
+
+	private
+
+	def set_room
+	  @room = Room.find(params[:id])
 	end
 
 
