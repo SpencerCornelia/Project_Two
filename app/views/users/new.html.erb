@@ -33,7 +33,7 @@
 								<% end %>	
 								<% form_for @user do |f| %>
 									<div class="form-group">
-										<%= f.text_field :name, placeholder: "Name" class: "form-control" %>
+										<%= f.text_field :name, placeholder: "Name", class: "form-control" %>
 									</div>
 									<div class="form-group">
 										<%= f.email_field :email, placeholder: "Email", class: "form-control" %>
@@ -50,7 +50,7 @@
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
-												<%= f.submit "Register" class"form-control" %>
+												<%= f.submit "Register", class"form-control" %>
 											</div>
 										</div>
 									</div>
