@@ -1,5 +1,7 @@
 SHOW PAGE
 
+<%= render partial: 'buttons/form', locals: {button: @button} %>
+
 
 <% @room.buttons.each do |b| %>
 	<div class="btn btn-sm btn-primary col-sm-2">

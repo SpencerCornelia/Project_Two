@@ -1,0 +1,17 @@
+<label>Add a Button!</label>
+<%= form_for @button do |f| %>
+	<div class="form-inline">
+		<div class="form-group">
+			<%= f.text_field :condition, placeholder: "Condition", class: "form-control" %>
+		</div>
+		Votes:
+		<div class="form-group">
+			<%= f.number_field(:votes, in: 5.0..20.0, step: 5.0) %>
+		</div> 
+		<!-- COME BACK TO THIS AFTER USER LOGIN IS FINISHED -->
+		<%= f.hidden_field :room_id, :value => params[:id] %>
+		<div class="form-group">
+			<%= f.submit "+", class: "btn btn-sm btn-primary"%>
+		</div>
+	</div>
+<% end %>
