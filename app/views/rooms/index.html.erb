@@ -1,0 +1,10 @@
+ROOMS
+
+# of total rooms = <%= @rooms.length %>
+
+<% @rooms.each do |r| %>
+	<div>
+		<%= r.name %>
+		<%= r.user_id %>
+	</div>
+<% end %>
