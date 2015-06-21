@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   get "/users/:id", to: "users#show", as: "user_show"
 
-  #need a "sign_in" path
+  get "/sign_in", to: "sessions#new"
+
+  post "/sessions", to: "sessions#create"
+
+  get "/sessions", to: "sessions#destroy", as: "user_logout"
 
 end
