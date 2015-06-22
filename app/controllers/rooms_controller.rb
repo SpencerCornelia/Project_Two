@@ -26,7 +26,7 @@ class RoomsController < ApplicationController
 
 	def show
 		set_room
-		room_owner
+		# room_owner
 		@button = Button.new
 		render :show
 	end
