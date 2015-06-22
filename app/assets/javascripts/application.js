@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
-//= require_tree .
+//= require_tree ./
 
 var app = {};
 
@@ -28,3 +28,15 @@ app.readyAll = function() {
       $(sel2).toggleClass('out');
       });
 };
+
+
+$(function () {
+	$(".room_buttons").on("click", function () {
+		var buttonId = $(this).data("buttonId")
+		console.log("buttonId", buttonId)
+		$.post("/buttons/" + buttonId + "/votes").
+			done(function (data) {
+				console.log("SUCCESS", data)
+			})
+	});
+})

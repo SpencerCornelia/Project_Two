@@ -19,9 +19,10 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		@room = Room.new
+		@user = User.find(params[:id])
 		current_user
 		render :show
-
 	end
 
 end

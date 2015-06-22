@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get "/sessions", to: "sessions#destroy", as: "user_logout"
 
+  post "/buttons/:button_id/votes", to: "votes#create", as: "button_votes"
+
 end
 
 
