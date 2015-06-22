@@ -3,10 +3,10 @@ class VotesController < ApplicationController
 	require 'twilio-ruby'
 
 	def create
-		# set_room
-		# room_owner
 		button_id = params[:button_id]
 		button = Button.find(button_id)
+		room = Room.find(button.room_id)
+		owner = User.find(room.user_id)
 		unless button.votes <= 0 
 		#|| session[:has_voted]
 			session[:has_voted] = true
@@ -23,8 +23,8 @@ class VotesController < ApplicationController
 
 			@client = Twilio::REST::Client.new(account_sid, auth_token)
 			@client.messages.create({:from => "15102300334",
-			                                :to => "4",
-			                                :body => "IT WORKS"})
+			                                :to => owner.phone_number,
+			                                :body => "The #{button.condition} condition has been met"})
 		end
 	end
 end

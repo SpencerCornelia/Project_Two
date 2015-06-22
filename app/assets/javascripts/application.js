@@ -32,8 +32,10 @@ app.readyAll = function() {
 
 $(function () {
 	$(".room_buttons").on("click", function () {
-		var buttonId = $(this).data("buttonId")
-		console.log("buttonId", buttonId)
+		var buttonId = $(this).data("buttonId");
+		var roomId = $(this).data("roomId");
+		console.log("buttonId", buttonId);
+		console.log("roomId", roomId);
 		$.post("/buttons/" + buttonId + "/votes").
 			done(function (data) {
 				console.log("SUCCESS", data)
