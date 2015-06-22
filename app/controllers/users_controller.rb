@@ -2,19 +2,22 @@ class UsersController < ApplicationController
 
 	def index
 		@user = current_user
-		render :index
 	end
 
 	def new
 		@user = User.new
-		render :new
+		render :show
 	end
 
 	def create
-		user_params = params.require(:user).permit(:name, :email, :password_digest, :phone_number)
+		user_params = params.require(:user).permit(:name, :email, :password, :password_confirmation, :phone_number)
 		@user = User.create(user_params)
-		login(@user)
-		redirect_to "/users/#{@user.id}"
+		if @user.save
+			login(@user)
+			redirect_to "/users/#{@user.id}"
+		else
+			@errors = @user.errors.messages
+		end	
 	end
 
 	def show
