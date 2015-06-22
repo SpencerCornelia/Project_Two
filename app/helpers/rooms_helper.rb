@@ -8,5 +8,4 @@ module RoomsHelper
 		@owner = User.find(@room.user_id)
 	end
 
-
 end

@@ -3,6 +3,8 @@ class VotesController < ApplicationController
 	require 'twilio-ruby'
 
 	def create
+		# set_room
+		# room_owner
 		button_id = params[:button_id]
 		button = Button.find(button_id)
 		unless button.votes <= 0 
@@ -21,7 +23,7 @@ class VotesController < ApplicationController
 
 			@client = Twilio::REST::Client.new(account_sid, auth_token)
 			@client.messages.create({:from => "15102300334",
-			                                :to => "4798317887",
+			                                :to => "4",
 			                                :body => "IT WORKS"})
 		end
 	end
