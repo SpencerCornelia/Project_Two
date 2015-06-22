@@ -21,7 +21,7 @@ class VotesController < ApplicationController
 
 			@client = Twilio::REST::Client.new(account_sid, auth_token)
 			@client.messages.create({:from => "15102300334",
-			                                :to => @owner.phone_number,
+			                                :to => "4798317887",
 			                                :body => "IT WORKS"})
 		end
 	end
