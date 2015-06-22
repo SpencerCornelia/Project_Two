@@ -8,8 +8,13 @@ Rails.application.routes.draw do
 
   get "/", to: "welcome#index"
 
+  get "/sign_in", to: "sessions#new"
 
-  #need a "sign_in" path
+  post "/sessions", to: "sessions#create"
+
+  get "/sessions", to: "sessions#destroy", as: "user_logout"
+
+  post "/buttons/:button_id/votes", to: "votes#create", as: "button_votes"
 
 end
 
