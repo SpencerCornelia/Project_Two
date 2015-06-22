@@ -1,5 +1,16 @@
-Show me the money
+Show me the money!
 
 <div>
-	<%= @user.name %>
+	<h3>Hello, <%= @user.name %></h3>
 </div>
+<hr>
+
+<h4>Your Current Rooms</h4>
+
+<% @user.rooms.each do |r| %>
+	<div>
+	<%= link_to r.name, room_path(r), class: "col-sm-4" %>
+	</div>
+<% end %>
+
+

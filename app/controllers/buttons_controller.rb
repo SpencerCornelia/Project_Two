@@ -11,24 +11,21 @@ class ButtonsController < ApplicationController
 	end
 
 	def create
-		@button = current_user.rooms.buttons.create(button_params)
-		respond_to do |format|
+		@button = Button.new(button_params)
 		  if @button.save
-		    format.html { redirect_to @button, notice: 'Button was successfully created.' }
-		    format.json { render :show, status: :created, condition: @button }
+		  	#may need to do this with ajax later
+		    redirect_to "/rooms/#{@button.room_id}"
 		  else
-		    format.html { render :new }
-		    format.json { render json: @button.errors, status: :unprocessable_entity }
+		    flash[:notice] = "Invalid Input"
+		    redirect_to "/rooms/#{@button.room_id}"
 		  end
-		end
 	end
 
 	private 
 
 	def button_params
-	  params.require(:button).permit(:condition, :votes)
+	  params.require(:button).permit(:condition, :votes, :room_id)
 	end
-
 
 
 end

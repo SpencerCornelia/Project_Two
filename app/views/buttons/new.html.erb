@@ -1,14 +1,1 @@
-<label>Add a Button!</label>
-<%= form_for @button do |f| %>
-	<div class="form-group col-md-6">
-		<%= f.text_field :condition, placeholder: "Condition", class: "form-control" %>
-	</div>
-	<div class="form-group col-xs-12">
-		<%= f.number_field(:votes, in: 5.0..20.0, step: 5.0) %>
-	</div>
-	<!-- COME BACK TO THIS AFTER USER LOGIN IS FINISHED -->
-	<%= f.hidden_field :room_id, :value => params[:id] %>
-	<div class="form-group col-xs-12">
-		<%= f.submit "Add Button", class: "btn btn-sm btn-primary col-sm-2"%>
-	</div>
-<% end %>
+<%= render partial: 'buttons/form', locals: {button: @button} %>
