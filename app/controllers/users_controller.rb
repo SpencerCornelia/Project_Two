@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-	attr_accessor :user_id
 
 	def index
-		@users = User.all
+		@user = current_user
 		render :index
 	end
 
