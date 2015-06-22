@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   get "/", to: "welcome#index"
 
+  post "/buttons/:button_id/votes", to: "votes#create", as: "button_votes"
 
   #need a "sign_in" path
 

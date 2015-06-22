@@ -5,6 +5,8 @@ Show me the money!
 </div>
 <hr>
 
+<%= render partial: 'rooms/form', locals: {room: @room} %>
+
 <h4>Your Current Rooms</h4>
 
 <% @user.rooms.each do |r| %>

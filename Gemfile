@@ -33,6 +33,8 @@ gem 'bcrypt', '~> 3.1.7'
 #Console
 gem 'pry-rails'
 
+gem 'twilio-ruby', '~> 4.2.1'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

@@ -7,4 +7,6 @@ class Room < ActiveRecord::Base
 						:presence => true,
 						:length => { :minimum => 1, :maximum => 50}
 
+	validates :user_id, presence: true
+
 end
