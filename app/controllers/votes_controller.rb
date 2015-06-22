@@ -17,7 +17,6 @@ class VotesController < ApplicationController
 			render json: {status: "ERROR"}
 		end
 		if (button.votes == 0)
-			# render json: {status: "mooo"}
 			account_sid = "ACd6c48d0044eed766b26814ec2b0d47e6"
 			auth_token = "b7168586375b75187ea8e204365733b1"
 
