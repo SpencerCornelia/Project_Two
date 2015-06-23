@@ -10,6 +10,7 @@
 	<% @user.rooms.each do |r| %>
 		<div>
 		<h5><%= link_to r.name, "/rooms/#{r.random_url}", class: "col-sm-4" %></h5>
+		<%= link_to "x", room_path(r), method: :delete %>
 		</div>
 	<% end %>
 </div>

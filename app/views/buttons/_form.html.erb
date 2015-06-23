@@ -10,7 +10,7 @@
 			<%= f.number_field(:votes, in: 5.0..20.0, step: 5.0) %>
 		</div>
 		<!-- COME BACK TO THIS AFTER USER LOGIN IS FINISHED -->
-		<%= f.hidden_field :room_id, :value => params[:id] %>
+		<%= f.hidden_field :room_id, :value => @room.id %>
 		<div class="form-group">
 			<%= f.submit "add", class: "btn btn-sm btn-primary"%>
 		</div>

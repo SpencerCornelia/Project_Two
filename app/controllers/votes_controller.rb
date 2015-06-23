@@ -3,6 +3,8 @@ class VotesController < ApplicationController
 	require 'twilio-ruby'
 
 	def create
+		account_sid = ENV['TW_SID']
+		auth_token = ENV['AUTH']
 		button_id = params[:button_id]
 		button = Button.find(button_id)
 		room = Room.find(button.room_id)
@@ -17,9 +19,6 @@ class VotesController < ApplicationController
 			render json: {status: "ERROR"}
 		end
 		if (button.votes == 0)
-			account_sid = "ACd6c48d0044eed766b26814ec2b0d47e6"
-			auth_token = "b7168586375b75187ea8e204365733b1"
-
 			@client = Twilio::REST::Client.new(account_sid, auth_token)
 			@client.messages.create({:from => "15102300334",
 			                                :to => owner.phone_number,

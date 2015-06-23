@@ -4,8 +4,10 @@
 
 
 <% @room.buttons.each do |b| %>
-	<div data-button-id="<%= b.id %>" data-room-id="<%= b.room_id %>" class="btn btn-sm btn-primary col-sm-2 room_buttons">
-		<%= b.condition %>
-		<%= b.votes %>
-	</div>
+	<% unless b.votes <= 0 %>
+		<div data-button-id="<%= b.id %>" data-room-id="<%= b.room_id %>" class="btn btn-sm btn-primary col-sm-2 room_buttons">
+			<%= b.condition %>
+			<%= b.votes %>
+		</div>
+	<% end %>
 <% end %>
