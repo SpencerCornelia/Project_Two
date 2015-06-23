@@ -29,9 +29,9 @@ app.readyAll = function() {
       });
 };
 
-
 $(function () {
 	$(".room_buttons").on("click", function () {
+		var self = this;
 		var buttonId = $(this).data("buttonId");
 		var roomId = $(this).data("roomId");
 		console.log("buttonId", buttonId);
@@ -39,6 +39,10 @@ $(function () {
 		$.post("/buttons/" + buttonId + "/votes").
 			done(function (data) {
 				console.log("SUCCESS", data)
+				if (data.votes === 0) {
+					console.log('at 0');
+					$(self).fadeOut(2000).hide();
+				}
 			})
 	});
 })

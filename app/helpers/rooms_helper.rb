@@ -6,7 +6,7 @@ module RoomsHelper
 	end
 
 	def room_num
-		params[:id]
+		@room = Room.find(params[:id])
 	end
 
 	def room_owner
