@@ -15,15 +15,17 @@ class RoomsController < ApplicationController
 	def create
 		# @user = User.find(params[:id])
 		@room = Room.new(room_params)
+		generate_unique_url
 		respond_to do |format|
 		  if @room.save
-		    format.html { redirect_to @room, success: 'Room was successfully created.' }
-		    format.json { render :show, status: :created, name: @room }
+		    format.html { redirect_to "/rooms/#{@room.random_url}", success: 'Room was successfully created.' }
+		    format.json { render :show, status: :created, name: @room }  
 		  else
 		    format.html { render :new }
 		    format.json { render json: @room.errors, status: :unprocessable_entity }
 		  end
 		end
+
 	end
 
 	def show
@@ -34,6 +36,7 @@ class RoomsController < ApplicationController
 	end
 
 	def edit
+		@room = room.find(params[:id])
 	end
 
 	def update
@@ -47,10 +50,5 @@ class RoomsController < ApplicationController
 	def room_params
 	  params.require(:room).permit(:name, :user_id)
 	end
-
-
-
-
-
 
 end
