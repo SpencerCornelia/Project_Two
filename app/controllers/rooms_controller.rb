@@ -17,7 +17,7 @@ class RoomsController < ApplicationController
 		generate_unique_url
 		respond_to do |format|
 		  if @room.save
-		    format.html { redirect_to @room, success: 'Room was successfully created.' }
+		    format.html { redirect_to "/rooms/#{@room.random_url}", success: 'Room was successfully created.' }
 		    format.json { render :show, status: :created, name: @room }  
 		  else
 		    format.html { render :new }
@@ -35,6 +35,7 @@ class RoomsController < ApplicationController
 	end
 
 	def edit
+		@room = room.find(params[:id])
 	end
 
 	def update
