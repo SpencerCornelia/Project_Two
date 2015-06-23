@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+	before_action :current_user
 
 	def index
 		@rooms = Room.all
