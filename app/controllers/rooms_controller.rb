@@ -1,9 +1,6 @@
 class RoomsController < ApplicationController
 	before_action :current_user
 
-	require 'securerandom'
-	before_action :generate_unique_token
-
 	def index
 		@rooms = Room.all
 		render :index
@@ -17,15 +14,17 @@ class RoomsController < ApplicationController
 	def create
 		# @user = User.find(params[:id])
 		@room = Room.new(room_params)
+		generate_unique_url
 		respond_to do |format|
 		  if @room.save
 		    format.html { redirect_to @room, success: 'Room was successfully created.' }
-		    format.json { render :show, status: :created, name: @room }
+		    format.json { render :show, status: :created, name: @room }  
 		  else
 		    format.html { render :new }
 		    format.json { render json: @room.errors, status: :unprocessable_entity }
 		  end
 		end
+
 	end
 
 	def show
@@ -49,12 +48,5 @@ class RoomsController < ApplicationController
 	def room_params
 	  params.require(:room).permit(:name, :user_id)
 	end
-
-
-	def generate_unique_token
-		unique_token = SecureRandom.hex(10)
-	end
-
-
 
 end
