@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :users
-	resources :rooms
+	resources :rooms, except: :show
 	resources :buttons
 
   root to: "welcome#index"
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get "/sessions", to: "sessions#destroy", as: "user_logout"
 
   post "/buttons/:button_id/votes", to: "votes#create", as: "button_votes"
+
+  get "/rooms/:random_url", to: "rooms#show"
 
 end
 
