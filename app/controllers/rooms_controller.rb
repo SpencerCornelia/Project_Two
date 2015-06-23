@@ -43,6 +43,9 @@ class RoomsController < ApplicationController
 	end
 
 	def destroy
+		room_num
+		@room.destroy()
+		redirect_to "/users/#{current_user.id}"
 	end
 
 	private
