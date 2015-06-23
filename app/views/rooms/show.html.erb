@@ -1,8 +1,10 @@
+<h2><%= @room.name %></h2>
+
 <%= render partial: 'buttons/form', locals: {button: @button} %>
 
 
 <% @room.buttons.each do |b| %>
-	<div class="btn btn-sm btn-primary col-sm-2 room_buttons">
+	<div data-button-id="<%= b.id %>" data-room-id="<%= b.room_id %>" class="btn btn-sm btn-primary col-sm-2 room_buttons">
 		<%= b.condition %>
 		<%= b.votes %>
 	</div>
