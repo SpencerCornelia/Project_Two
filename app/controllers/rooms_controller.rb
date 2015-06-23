@@ -1,6 +1,9 @@
 class RoomsController < ApplicationController
 	before_action :current_user
 
+	require 'securerandom'
+	before_action :generate_unique_token
+
 	def index
 		@rooms = Room.all
 		render :index
@@ -48,7 +51,9 @@ class RoomsController < ApplicationController
 	end
 
 
-
+	def generate_unique_token
+		unique_token = SecureRandom.hex(10)
+	end
 
 
 
