@@ -81,15 +81,5 @@ RSpec.describe User, type: :model do
 						 password_confirmation: "blahblah", 
 						 phone_number: "5107822467"})
 		expect(t.save).to eq(false) 
-	end
 
-	# it "should find and authenticate user" do
-	# 	u = User.new({name: "Bob",
-	# 					 email: "bob@bob.com", 
-	# 					 password: "blahblah",
-	# 					 password_confirmation: "blahblah", 
-	# 					 phone_number: "5107822467"}).save
-	# 	user_params = u[email], u[password]
-	# 	expect(User.confirm(user_params)).to eq(u)
-	# end 
 end
