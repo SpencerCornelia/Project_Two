@@ -10,7 +10,7 @@ module SessionsHelper
   end
 
   def logged_in?
-  	redirect_to sign_in_path unless current_user
+  	redirect_to root_path unless current_user
 	end
 
   def logout

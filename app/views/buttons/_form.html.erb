@@ -1,6 +1,6 @@
 <label>Add new button</label>
 
-<%= form_for @button, remote: true do |f| %>
+<%= form_for @button do |f| %>
 	<div class="form-inline">
 		<div class="form-group">
 			<%= f.text_field :condition, placeholder: "Set Condition", class: "form-control" %>

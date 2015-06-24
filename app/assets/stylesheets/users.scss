@@ -1,3 +1,36 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+ h3 {
+
+ }
+
+ .delete_buttons {
+ 	max-height: 1.5em;
+ 	max-width: 1.5em;
+ 	padding-right: 1.25em;
+ 	padding-bottom: 1.75em;
+ 	text-align: center;
+ 	color: white;
+   background-color: maroon;
+   border: none;
+
+   a {
+   	color: white;
+   }
+ }
+
+ .room_link {
+ 	height: 1.75em;
+ 	background-color: orange;
+ 	color: white;
+ 	text-align: center;
+ 	padding-top: 5px;
+ 	border-radius: 5px;
+ }
