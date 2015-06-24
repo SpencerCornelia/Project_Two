@@ -28,7 +28,7 @@
 			<%= button_to "X", button_path(b), method: :delete, class: "btn btn-danger col-xs-1 delete_buttons" %>
 			</div>
 
-			<%= button_to "", "", class: "#{varies} btn col-xs-1 status_buttons" %>
+			<%= button_to "", {}, :disabled => true, class: "#{varies} btn col-xs-1 status_buttons" %>
 			<% end %>
 	</div>	
 	<% end %>
