@@ -82,4 +82,17 @@ RSpec.describe User, type: :model do
 						 phone_number: "5107822467"})
 		expect(t.save).to eq(false) 
 	end 
+
+	it "should confirm user by comparing email and password" do
+		u = User.new({name: "Bob",
+						 email: "bob@bob.com", 
+						 password: "blahblah",
+						 password_confirmation: "blahblah", 
+						 phone_number: "5107822467"})
+		expect(User.confirm(t)).to eq(true) 
+	end 
+
+#room model
+#button model
+#testing for controllers	
 end
