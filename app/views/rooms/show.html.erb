@@ -8,6 +8,7 @@
 
 <% @room.buttons.each do |b| %>
 	
+	<% session[:button] = session[:button] || [] %>
 	<% if session[:button].include?(b.id) then voted = "voted_button" %>
 	<% else voted = "not_voted_button" %>
 	<% end %>
