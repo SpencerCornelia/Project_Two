@@ -7,7 +7,7 @@
  *= require_self
  */
 
-.delete_button {
+.delete_buttons {
 	max-height: 1.5em;
 	max-width: 1.5em;
 	padding-right: 1.25em;
@@ -20,4 +20,78 @@
   a {
   	color: white;
   }
+}
+
+.room_buttons {
+	white-space: normal;
+	height: 10em;
+	width: 10em;
+	margin: 0 auto;
+	border-radius: 50%;
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	min-width: 90px;
+	padding-top: 50px;
+	background-color: orange;
+	border: none;
+	
+}
+
+.room_buttons:hover {
+	background-color: black;
+}
+
+.button_container {
+	text-align: center;
+	margin-top: 3em;
+}
+
+.status_buttons {
+		max-height: 1em;
+		max-width: 1em;
+		padding: 0;
+		text-align: center;
+		color: white;
+	  border: none;
+	  border-radius: 50%;
+}
+
+.voted_button {
+	background-color: purple;
+}
+
+.not_voted_button {
+	background-color: green;
+}
+
+.blue_button {
+	background-color: blue;
+}
+
+.yellow_button {
+	background-color: yellow;
+}
+
+.red_button {
+	background-color: red;
+}
+
+.custom_alert {
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	color: #a94442;
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.custom_success {
+	background-color: rgba(46, 204, 113, .6);
+	border-color: rgba(46, 204, 113,1.0);
+	color: rgba(39, 174, 96,1.0);
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
 }

@@ -30,19 +30,27 @@ app.readyAll = function() {
 };
 
 $(function () {
-	$(".room_buttons").on("click", function () {
-		var self = this;
+	$(".room_buttons").on("click", function (e) {
+		$("body").prepend("<div id=notifications></div>")
+		var self = e.target;
 		var buttonId = $(this).data("buttonId");
-		var roomId = $(this).data("roomId");
 		console.log("buttonId", buttonId);
-		console.log("roomId", roomId);
 		$.post("/buttons/" + buttonId + "/votes").
 			done(function (data) {
-				console.log("SUCCESS", data)
+				console.log(data);
+				if (data.status === "ERROR") {
+					$('#notifications').text('You have already voted').addClass("custom_alert");
+					$(self).css("background-color", "rgba(149, 165, 166,1.0)");
+				}
+				else {
+					$('#notifications').text('Your vote has been recorded').addClass("custom_success");
+					$(self).css("background-color", "rgba(149, 165, 166,1.0)");
+				}
+				$('#notifications').fadeOut(3000);
 				if (data.votes === 0) {
 					console.log('at 0');
-					$(self).fadeOut(2000).hide();
+					$(self).fadeOut(3000).hide();
 				}
-			})
+			});
 	});
 })

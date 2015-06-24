@@ -34,6 +34,12 @@ gem 'dotenv-rails', :groups => [:development, :test]
 
 gem 'twilio-ruby', '~> 4.2.1'
 
+group :production do
+  gem 'rails_12factor'
+end
+
+gem 'authy'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
