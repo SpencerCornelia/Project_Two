@@ -12,13 +12,15 @@ class ButtonsController < ApplicationController
 
 	def create
 		@button = Button.new(button_params)
+		respond_to do |format|
 		  if @button.save
-		  	#may need to do this with ajax later
-		    redirect_to "/rooms/#{Room.find(@button.room_id).random_url}"
+		    # format.html { redirect_to "/rooms/#{Room.find(@button.room_id).random_url}", success: 'Button was successfully created.' }
+		    format.json { render json: @button, status: 200 }
 		  else
-		    flash[:notice] = "Invalid Input"
-		    redirect_to "/rooms/#{@button.room_id}"
+		    # format.html { render :new }
+		    format.json { render json: @button.errors, status: :unprocessable_entity }
 		  end
+		end
 	end
 
 	def destroy
