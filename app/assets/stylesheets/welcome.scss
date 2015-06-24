@@ -1,6 +1,9 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ *= require_self
+*/
 body {
     padding-top: 90px;
 }
@@ -99,4 +102,17 @@ body {
 	color: #fff;
 	background-color: #1CA347;
 	border-color: #1CA347;
+}
+
+.contactHeader {
+    font-size: -webkit-xxx-large;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.img-circle {
+	margin-bottom: 25px;
+	margin-top: 10px;
+	border-style: solid;
+    border-width: 5px;
 }
