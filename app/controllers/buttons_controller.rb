@@ -15,6 +15,7 @@ class ButtonsController < ApplicationController
 		  if @button.save
 		  	#may need to do this with ajax later
 		    redirect_to "/rooms/#{Room.find(@button.room_id).random_url}"
+		    # redirect_to root_path
 		  else
 		    redirect_to "/rooms/#{Room.find(@button.room_id).random_url}"
 		    flash[:notice] = @button.errors.full_messages.to_sentence
