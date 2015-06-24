@@ -8,9 +8,11 @@
 <div class="col-xs-12">
 	<h4>Your Current Rooms</h4>
 	<% @user.rooms.each do |r| %>
-		<div>
-		<h5><%= link_to r.name, "/rooms/#{r.random_url}", class: "col-sm-4" %></h5>
-		<%= link_to "x", room_path(r), method: :delete %>
+		<div class="room_container">
+			<h4><%= link_to r.name, "/rooms/#{r.random_url}", class: "col-xs-6 room_link" %></h4>
+			<div>
+			<%= link_to "X", room_path(r), method: :delete, class: "btn btn-danger col-xs-1 delete_buttons" %>
+			</div>
 		</div>
 	<% end %>
 </div>

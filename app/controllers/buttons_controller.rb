@@ -16,13 +16,12 @@ class ButtonsController < ApplicationController
 		  	#may need to do this with ajax later
 		    redirect_to "/rooms/#{Room.find(@button.room_id).random_url}"
 		  else
-		    flash[:notice] = "Invalid Input"
-		    redirect_to "/rooms/#{@button.room_id}"
+		    redirect_to "/rooms/#{Room.find(@button.room_id).random_url}"
+		    flash[:notice] = @button.errors.full_messages.to_sentence
 		  end
 	end
 
 	def destroy
-		# set_room
 		button_num
 		@button.destroy()
 		redirect_to :back
