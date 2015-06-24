@@ -8,6 +8,10 @@ Rails.application.routes.draw do
 
   get "/", to: "welcome#index"
 
+  get "/about", to: "welcome#about", as: "about"
+
+  get "/contact", to: "welcome#contact", as: "contact_us"
+
   post "/sessions", to: "sessions#create"
 
   get "/sessions", to: "sessions#destroy", as: "user_logout"
