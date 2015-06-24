@@ -9,8 +9,12 @@ class VotesController < ApplicationController
 		button = Button.find(button_id)
 		room = Room.find(button.room_id)
 		owner = User.find(room.user_id)
-		unless button.votes <= 0 
-		#|| session[:has_voted]
+
+		session[:button] = session[:button] || []
+
+		unless button.votes <= 0 or session[:button].include?(button.id)
+			session[:button] << button.id
+			# || session[:has_voted]
 			session[:has_voted] = true
 			button.votes -= 1
 			button.save
@@ -18,6 +22,7 @@ class VotesController < ApplicationController
 		else
 			render json: {status: "ERROR"}
 		end
+		
 		if (button.votes == 0)
 			@client = Twilio::REST::Client.new(account_sid, auth_token)
 			@client.messages.create({:from => "15102300334",

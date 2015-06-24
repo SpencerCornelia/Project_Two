@@ -21,6 +21,13 @@ class ButtonsController < ApplicationController
 		  end
 	end
 
+	def destroy
+		# set_room
+		button_num
+		@button.destroy()
+		redirect_to :back
+	end
+
 	private 
 
 	def button_params
