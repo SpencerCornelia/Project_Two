@@ -22,7 +22,6 @@ Rails.application.routes.draw do
 
 end
 
-
 #       Prefix Verb   URI Pattern                         Controller#Action
 #        users GET    /users(.:format)                    users#index
 #              POST   /users(.:format)                    users#create
@@ -36,8 +35,7 @@ end
 #              POST   /rooms(.:format)                    rooms#create
 #     new_room GET    /rooms/new(.:format)                rooms#new
 #    edit_room GET    /rooms/:id/edit(.:format)           rooms#edit
-#         room GET    /rooms/:id(.:format)                rooms#show
-#              PATCH  /rooms/:id(.:format)                rooms#update
+#         room PATCH  /rooms/:id(.:format)                rooms#update
 #              PUT    /rooms/:id(.:format)                rooms#update
 #              DELETE /rooms/:id(.:format)                rooms#destroy
 #      buttons GET    /buttons(.:format)                  buttons#index
@@ -50,7 +48,8 @@ end
 #              DELETE /buttons/:id(.:format)              buttons#destroy
 #         root GET    /                                   welcome#index
 #              GET    /                                   welcome#index
-#      sign_in GET    /sign_in(.:format)                  sessions#new
 #     sessions POST   /sessions(.:format)                 sessions#create
 #  user_logout GET    /sessions(.:format)                 sessions#destroy
 # button_votes POST   /buttons/:button_id/votes(.:format) votes#create
+#              GET    /rooms/:random_url(.:format)        rooms#show
+
