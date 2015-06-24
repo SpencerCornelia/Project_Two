@@ -87,7 +87,7 @@ body {
 }
 
 .btn-register {
-	background-color: #1CB94E;
+	background-color: red;
 	outline: none;
 	color: #fff;
 	font-size: 14px;
@@ -104,6 +104,11 @@ body {
 	border-color: #1CA347;
 }
 
+#register_button {
+	background-color: RGBA(95, 158, 160, 1);
+	color: RGBA(255, 255, 255, .7)
+}
+
 .contactHeader {
     font-size: -webkit-xxx-large;
     font-weight: bolder;
@@ -115,4 +120,14 @@ body {
 	margin-top: 10px;
 	border-style: solid;
     border-width: 5px;
+}
+
+#twilio_logo {
+	height: 25%;
+	width: 25%;
+}
+
+#twilio_div {
+	margin: 0 auto;
+	text-align: center;
 }

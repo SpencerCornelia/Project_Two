@@ -25,7 +25,7 @@ class VotesController < ApplicationController
 		
 		if (button.votes == 0)
 			@client = Twilio::REST::Client.new(account_sid, auth_token)
-			@client.messages.create({:from => "15102300334",
+			@client.messages.create({:from => owner.twilio_number,
 			                                :to => owner.phone_number,
 			                                :body => "The #{button.condition} condition has been met"})
 		end
