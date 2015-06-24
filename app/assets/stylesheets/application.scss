@@ -11,13 +11,13 @@
  * file per style scope.
  *
  *= require welcome.scss
+ *= require rooms.scss
  *= require_tree .
  *= require_self
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
 
  // COLOR PALLETE
  $color-primary: #2C3E50;
@@ -71,4 +71,9 @@
                width:0;
            }
        }
+
+
+
+
+
 

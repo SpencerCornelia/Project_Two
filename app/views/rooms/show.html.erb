@@ -1,13 +1,20 @@
 <h2><%= @room.name %></h2>
 
+<% if current_user == room_owner %>
 <%= render partial: 'buttons/form', locals: {button: @button} %>
-
+<% end %>
 
 <% @room.buttons.each do |b| %>
 	<% unless b.votes <= 0 %>
-		<div data-button-id="<%= b.id %>" data-room-id="<%= b.room_id %>" class="btn btn-sm btn-primary col-sm-2 room_buttons">
+		<div data-button-id="<%= b.id %>" data-room-id="<%= b.room_id %>" class="btn btn-sm btn-primary col-xs-3 room_buttons">
 			<%= b.condition %>
 			<%= b.votes %>
+			<% if current_user == room_owner %>
+			<div class="btn btn-sm btn-danger col-xs-1 delete_button">
+			<%= link_to "X", button_path(b), method: :delete %>
+			</div>
+			<% end %>
 		</div>
+		
 	<% end %>
 <% end %>
