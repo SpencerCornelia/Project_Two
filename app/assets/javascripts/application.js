@@ -11,10 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require jquery_ujs 
 //= require bootstrap
 //= require turbolinks
 //= require_tree ./
+
+
 
 var app = {};
 
@@ -25,7 +27,7 @@ app.readyAll = function() {
     sideslider.click(function(event){
       console.log('clicked');
       $(sel).toggleClass('in');
-      $(sel2).toggleClass('out');
+      $(sel2).toggleClass('out');	
       });
 };
 
@@ -52,5 +54,6 @@ $(function () {
 					$(self).fadeOut(3000).hide();
 				}
 			});
+
 	});
 })

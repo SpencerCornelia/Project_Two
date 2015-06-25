@@ -1,13 +1,48 @@
 <h2><%= @room.name %></h2>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+<%= javascript_tag do |b| %>
+
+$( init );
+ 
+function init() {
+  $('.button_drag').draggable();
+  $('.makeMeDroppable').droppable( {
+    drop: handleDropEvent
+  } ); 
+}
+
+function handleDropEvent( event, ui ) {
+  var draggable = ui.draggable;
+  var current_button = draggable.attr('data-button-id')
+  var num = parseInt(current_button);
+  console.log(num);
+  alert( 'The square with class "' + draggable.attr('data-button-id') + '" was dropped onto me!' );
+ 
+}
+
+
+<% end %>
+
+
 <% if current_user == room_owner %>
 <%= render partial: 'buttons/form', locals: {button: @button} %>
+<div class="row">
+    <div class="col-xs-3 col-xs-offset-9 makeMeDroppable">
+          <div class="glyphicon glyphicon-trash" aria-hidden="true">
+          delete </div>
+    </div>
+</div>
 <% end %>
+
 
 <% colors = ["blue_button", "yellow_button", "red_button"] %>
 
 <% @room.buttons.each do |b| %>
-	
+
+	<% session[:button] = session[:button] || [] %>
 	<% if session[:button].include?(b.id) then voted = "voted_button" %>
 	<% else voted = "not_voted_button" %>
 	<% end %>
@@ -32,3 +67,4 @@
 	</div>	
 	<% end %>
 <% end %>
+
