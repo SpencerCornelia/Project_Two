@@ -47,10 +47,10 @@ $(function () {
 					$('#notifications').text('Your vote has been recorded').addClass("custom_success");
 					$(self).css("background-color", "rgba(149, 165, 166,1.0)");
 				}
-				$('#notifications').fadeOut(3000);
+				$('#notifications').fadeOut(2000);
 				if (data.votes === 0) {
 					console.log('at 0');
-					$(self).fadeOut(3000).hide();
+					$(self).fadeOut(2000).hide();
 				}
 			});
 	});

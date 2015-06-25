@@ -4,8 +4,6 @@
 <%= render partial: 'buttons/form', locals: {button: @button} %>
 <% end %>
 
-
-
 <% @room.buttons.each do |b| %>
 	<% b.created_at.to_time %>
 	<% time_range = (b.created_at.to_time + 0.days + b.time_limit.minutes + 0.seconds) %>
@@ -15,8 +13,6 @@
 		<div>Voting has ended for <%= b.condition %> </div>
 	<% end %>
 
-
-	
 	<% session[:button] = session[:button] || [] %>
 	<% if session[:button].include?(b.id) then voted = "voted_button" %>
 	<% else voted = "not_voted_button" %>
@@ -44,4 +40,8 @@
 			<% end %>
 		</div>	
 	<% end %>
+<% end %>
+
+<% content_for :header do %>
+  <%= javascript_include_tag 'rooms' %>  
 <% end %>
