@@ -48,11 +48,7 @@ app.registerForm = function(self){
 
 //Event Listners
 
-
-	//Form EL
-	console.log("setting ELs for register forms")
-	var $register = $('#register-form');
-
-	$register.hide();
-
+//Form EL
+var $register = $('#register-form');
+$register.hide();
 

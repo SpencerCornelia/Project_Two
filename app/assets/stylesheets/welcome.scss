@@ -131,3 +131,32 @@ body {
 	margin: 0 auto;
 	text-align: center;
 }
+
+div#welcomeIndex.container-fluid {
+	background: url("http://i.imgur.com/wZG39Iz.jpg") no-repeat center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+    display: block; 
+   	margin-top: -50px;
+    opacity: 0.8;
+}
+
+#appName {
+	color: white;
+    text-align: center;
+    font-size: -webkit-xxx-large;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+#landingBlurb {
+	text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    font-size: x-large;
+    font-weight: lighter;
+}

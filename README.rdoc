@@ -1,28 +1,25 @@
-== README
+= [This App]
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+== Practical Use
+This App was created in order to assist instructors in our WDI program at GA to know when students are in need.  After creating a room, an instructor can create a button with a custom title and a custom amount of clicks needed to set off an event.  Using Twilio's API, the instructor will receive a text message with a body of text recognizing the students' need.  Our intention for this app was to allow instructors to receive a warning when students needed a break or were getting stuck on a problem.
 
-Things you may want to cover:
+== Inspiration
+The inspiration for [This App] came from the many moments in class when a majority of students were in need of a mental break or were struggling keeping up with the pace of the lecture.  We realized that it would be nice to be able to alert the instructor in an anonymous way that we were in need of a break or a second to digest the material.
 
-* Ruby version
+== User Stories
+1.  A user should be able to login or sign up via the home page
+2.  The ability to create a room on a user home page
+3.  The ability to create a custom button and click value
+4.  The user will be given a custom link to send to his/her students
+5.  Students/guests can click button that corresponds with their needs
+6.  User/instructor will receive a text when click value of button has reached zero
+7.  User can logout at any time or visit their profile page, which shows their current rooms
 
-* System dependencies
+== How To Run App/Collaborate
+1.  Open up your terminal in the folder that you'd like our project to be located in
+2.  Run 'git clone https://github.com/WDI-18-Project-2/Project_Two.git' in your terminal
+3.  Ensure PostgreSQL is running 
+4.  Open a new tab and run your rails server by typing 'rails s' in the terminal
+5.  Open up the app in your text editor
+6.  Go to 'localhost:3000'
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

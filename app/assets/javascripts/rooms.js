@@ -1,5 +1,3 @@
-
-
 $(function () {
 	//startRefresh();
 	console.log('loaded');
