@@ -7,7 +7,12 @@
 		</div>
 		Votes:
 		<div class="form-group">
-			<%= f.number_field(:votes, in: 5.0..20.0, step: 5.0) %>
+			<%= f.number_field(:votes, in: 5.0..30.0, step: 5.0) %>
+		</div>
+		Time Limit?
+		<div class="form-group">
+			<%= f.number_field(:time_limit, in: 1.0..30.0, step: 1.0) %>
+			Minutes
 		</div>
 		<!-- COME BACK TO THIS AFTER USER LOGIN IS FINISHED -->
 		<%= f.hidden_field :room_id, :value => @room.id %>

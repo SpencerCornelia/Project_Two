@@ -56,24 +56,25 @@
 	  border-radius: 50%;
 }
 
-.voted_button {
-	background-color: purple;
-}
-
-.not_voted_button {
-	background-color: green;
-}
-
 .blue_button {
-	background-color: blue;
+	background-color: #2980b9;
+}
+
+.green_button {
+	background-color: #16a085;
 }
 
 .yellow_button {
-	background-color: yellow;
+	background-color: #f1c40f;
 }
 
 .red_button {
-	background-color: red;
+	background-color: #e74c3c;
+}
+
+#notifications {
+	padding: 15px;
+	margin-bottom: 20px;
 }
 
 .custom_alert {
@@ -94,4 +95,8 @@
 	margin-bottom: 20px;
 	border: 1px solid transparent;
 	border-radius: 4px;
+}
+
+.voted_button {
+	background-color: rgba(149, 165, 166,1.0);
 }

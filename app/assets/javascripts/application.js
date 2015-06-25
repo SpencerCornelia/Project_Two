@@ -31,9 +31,29 @@ app.readyAll = function() {
       });
 };
 
+//Form Events
+
+app.loginForm = function(self) {
+	console.log('clicked');
+	$("#login-form").delay(100).fadeIn(100);
+	$("#register-form").fadeOut(100);
+	$('#register-form-link').removeClass('active');
+	$(self).addClass('active');
+}
+
+app.registerForm = function(self){
+	$("#register-form").delay(100).fadeIn(100);
+	$("#login-form").fadeOut(100);
+	$('#login-form-link').removeClass('active');
+	$(self).addClass('active');
+}
+
+//Event Listners
 $(function () {
+	$("body").prepend("<div id=notifications>&nbsp</div>");
+	//button EL
 	$(".room_buttons").on("click", function (e) {
-		$("body").prepend("<div id=notifications></div>")
+		
 		var self = e.target;
 		var buttonId = $(this).data("buttonId");
 		console.log("buttonId", buttonId);
@@ -48,12 +68,29 @@ $(function () {
 					$('#notifications').text('Your vote has been recorded').addClass("custom_success");
 					$(self).css("background-color", "rgba(149, 165, 166,1.0)");
 				}
-				$('#notifications').fadeOut(3000);
+				$('#notifications').fadeOut(2000);
 				if (data.votes === 0) {
 					console.log('at 0');
-					$(self).fadeOut(3000).hide();
+					$(self).fadeOut(2000).hide();
 				}
 			});
 
 	});
+
 })
+app.readyAll();
+
+	//Form EL
+	console.log("setting ELs for register forms")
+	var $register = $('#register-form');
+
+	$register.hide();
+
+	//buttons EL
+	var $room_buttons = $('.room_buttons');
+	$room_buttons.click(function () {
+		console.log('clicked');
+	});
+
+});
+
