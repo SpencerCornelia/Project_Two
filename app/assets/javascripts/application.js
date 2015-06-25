@@ -30,8 +30,9 @@ app.readyAll = function() {
 };
 
 $(function () {
+	$("body").prepend("<div id=notifications>&nbsp</div>");
 	$(".room_buttons").on("click", function (e) {
-		$("body").prepend("<div id=notifications></div>")
+		
 		var self = e.target;
 		var buttonId = $(this).data("buttonId");
 		console.log("buttonId", buttonId);

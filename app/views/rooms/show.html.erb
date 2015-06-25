@@ -4,32 +4,44 @@
 <%= render partial: 'buttons/form', locals: {button: @button} %>
 <% end %>
 
-<% colors = ["blue_button", "yellow_button", "red_button"] %>
+
 
 <% @room.buttons.each do |b| %>
+	<% b.created_at.to_time %>
+	<% time_range = (b.created_at.to_time + 0.days + b.time_limit.minutes + 0.seconds) %>
+
+	<% if Time.now > time_range %>
+		<% b.destroy() %>
+		<div>Voting has ended for <%= b.condition %> </div>
+	<% end %>
+
+
 	
 	<% session[:button] = session[:button] || [] %>
 	<% if session[:button].include?(b.id) then voted = "voted_button" %>
 	<% else voted = "not_voted_button" %>
 	<% end %>
-	<% unless b.votes <= 0 %>
-	
-	<div class="button_container">
-		<% if (b.votes <= 5) then varies = "red_button" %>
-		<% elsif (b.votes > 5 and b.votes <= 15) then varies = "yellow_button" %>
-		<% else varies = "blue_button" %>
-		<% end %>
-			<div data-button-id="<%= b.id %>" class="btn btn-sm btn-primary col-xs-3 room_buttons #{varies}">
-				<div><%= b.condition %></div>
+
+	<% unless b.votes <= 0 || Time.now > time_range %>
+		<div class="button_container">
 			<% if current_user == room_owner %>
-			<%= b.votes %>
-			</div>
-			<div>
-			<%= button_to "X", button_path(b), method: :delete, class: "btn btn-danger col-xs-1 delete_buttons" %>
+				<% if (b.votes <= 5) then b.color = "red_button" %>
+				<% elsif (b.votes > 5 and b.votes <= 15) then b.color = "yellow_button" %>
+				<% elsif (b.votes > 15 and b.votes <= 24) then b.color = "green_button" %>
+				<% else b.color = "blue_button" %>
+				<% end %>
+			<% end %>
+
+			<div data-button-id="<%= b.id %>" class="btn btn-sm btn-primary col-xs-3 room_buttons <%= voted %> <%= b.color %>">
+				<div><%= b.condition %></div>
 			</div>
 
-			<%= button_to "", {}, :disabled => true, class: "#{varies} btn col-xs-1 status_buttons" %>
+			<% if current_user == room_owner %>
+				<div class="col-xs-1">
+					<%= button_to "X", button_path(b), method: :delete, class: "btn btn-danger col-xs-1 delete_buttons" %>
+					<%= b.votes %>
+				</div>
 			<% end %>
-	</div>	
+		</div>	
 	<% end %>
 <% end %>
