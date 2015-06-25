@@ -1,3 +1,3 @@
-//
-	alert('hei');
-	console.log('loaded');
+
+	// alert('hei');
+	// console.log('loaded');

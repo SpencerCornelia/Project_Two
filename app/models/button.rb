@@ -6,6 +6,5 @@ class Button < ActiveRecord::Base
 	validates :votes, presence: true
 	validates :room_id, presence: true
 	validates :time_limit, presence: true
-	
 
 end

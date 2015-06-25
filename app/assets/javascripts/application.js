@@ -11,10 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require jquery_ujs 
 //= require bootstrap
 //= require turbolinks
 //= require_tree ./
+
+
 
 var app = {};
 
@@ -25,12 +27,31 @@ app.readyAll = function() {
     sideslider.click(function(event){
       console.log('clicked');
       $(sel).toggleClass('in');
-      $(sel2).toggleClass('out');
+      $(sel2).toggleClass('out');	
       });
 };
 
+//Form Events
+
+app.loginForm = function(self) {
+	console.log('clicked');
+	$("#login-form").delay(100).fadeIn(100);
+	$("#register-form").fadeOut(100);
+	$('#register-form-link').removeClass('active');
+	$(self).addClass('active');
+}
+
+app.registerForm = function(self){
+	$("#register-form").delay(100).fadeIn(100);
+	$("#login-form").fadeOut(100);
+	$('#login-form-link').removeClass('active');
+	$(self).addClass('active');
+}
+
+//Event Listners
 $(function () {
 	$("body").prepend("<div id=notifications>&nbsp</div>");
+	//button EL
 	$(".room_buttons").on("click", function (e) {
 		
 		var self = e.target;
@@ -53,5 +74,19 @@ $(function () {
 					$(self).fadeOut(2000).hide();
 				}
 			});
+
 	});
-})
+
+	//Form EL
+	console.log("setting ELs for register forms")
+	var $register = $('#register-form');
+
+	$register.hide();
+
+	//buttons EL
+	var $room_buttons = $('.room_buttons');
+	$room_buttons.click(function () {
+		console.log('clicked');
+	});
+
+});
