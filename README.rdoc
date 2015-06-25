@@ -1,28 +1,9 @@
-== README
+== [This App]
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+= Practical Use
+# [This App] was created in order to assist instructors in our WDI program at GA to know when students are in need.  After creating a room, an instructor can create a button with a custom title and a custom amount of clicks needed to set off an event.  Using Twilio's API, the instructor will receive a text message with a body of text recognizing the students' need.  Our intention for this app was to allow instructors to receive a warning when students needed a break or were getting stuck on a problem.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+= Inspiration
+# The inspiration for [This App] came from the many moments in class when a majority of students were in need of a mental break or were struggling keeping up with the pace of the lecture.  We realized that it would be nice to be able to alert the instructor in an anonymous way that we were in need of a break or a second to digest the material.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
