@@ -100,14 +100,11 @@ body {
 .btn-register:hover,
 .btn-register:focus {
 	color: #fff;
-	background-color: #1CA347;
-	border-color: #1CA347;
+	background-color: #53A3CD;
+	border-color: #53A3CD;
 }
 
-#register_button {
-	background-color: RGBA(95, 158, 160, 1);
-	color: RGBA(255, 255, 255, .7)
-}
+
 
 .contactHeader {
     font-size: -webkit-xxx-large;
@@ -160,4 +157,10 @@ div#welcomeIndex.container-fluid {
     margin-bottom: 50px;
     font-size: x-large;
     font-weight: lighter;
+}
+
+.alert-danger {
+	z-index: 5;
+	margin-top: -54px;
+	opacity: 0.7;
 }
