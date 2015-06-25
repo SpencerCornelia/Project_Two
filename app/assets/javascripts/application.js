@@ -31,7 +31,26 @@ app.readyAll = function() {
       });
 };
 
+//Form Events
+
+app.loginForm = function(self) {
+	console.log('clicked');
+	$("#login-form").delay(100).fadeIn(100);
+	$("#register-form").fadeOut(100);
+	$('#register-form-link').removeClass('active');
+	$(self).addClass('active');
+}
+
+app.registerForm = function(self){
+	$("#register-form").delay(100).fadeIn(100);
+	$("#login-form").fadeOut(100);
+	$('#login-form-link').removeClass('active');
+	$(self).addClass('active');
+}
+
+//Event Listners
 $(function () {
+	//button EL
 	$(".room_buttons").on("click", function (e) {
 		$("body").prepend("<div id=notifications></div>")
 		var self = e.target;
@@ -56,4 +75,35 @@ $(function () {
 			});
 
 	});
-})
+
+	//Form EL
+	console.log("setting ELs for register forms")
+	var $register = $('#register-form');
+
+	$register.hide();
+ //    $('#login-form-link').click(function(e) {
+ //   		console.log('clicked');
+	// 	$("#login-form").delay(100).fadeIn(100);
+ // 		$("#register-form").fadeOut(100);
+	// 	$('#register-form-link').removeClass('active');
+	// 	$(this).addClass('active');
+	// 	e.preventDefault();
+	// });
+
+	// $('#register-form-link').click(function(e) {
+	// 	console.log('clicked the other');
+	// 	$("#register-form").delay(100).fadeIn(100);
+ // 		$("#login-form").fadeOut(100);
+	// 	$('#login-form-link').removeClass('active');
+	// 	$(this).addClass('active');
+	// 	e.preventDefault();
+	// });
+
+
+	//buttons EL
+	var $room_buttons = $('.room_buttons');
+	$room_buttons.click(function () {
+		console.log('clicked');
+	});
+
+});
