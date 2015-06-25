@@ -31,7 +31,7 @@ class ButtonsController < ApplicationController
 	private 
 
 	def button_params
-	  params.require(:button).permit(:condition, :votes, :room_id)
+	  params.require(:button).permit(:condition, :votes, :time_limit, :room_id)
 	end
 
 

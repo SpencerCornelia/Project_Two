@@ -1,16 +1,4 @@
 class RoomsController < ApplicationController
-	
-	# include ActionController::Live
-
-	# def stream
-	#   response.headers['Content-Type'] = 'text/event-stream'
-	#   100.times {
-	#     response.stream.write "hello world\n"
-	#     sleep 1
-	#   }
-	# ensure
-	#   response.stream.close
-	# end
 
 	before_action :current_user
 
@@ -25,7 +13,6 @@ class RoomsController < ApplicationController
 	end
 
 	def create
-		# @user = User.find(params[:id])
 		@room = Room.new(room_params)
 		generate_unique_url
 		respond_to do |format|
@@ -42,7 +29,6 @@ class RoomsController < ApplicationController
 
 	def show
 		set_room
-		# room_owner
 		@button = Button.new
 		render :show
 	end
