@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
 	it "should validate presence of email" do
 		u = User.new({name: "Bob",
 						 email: nil, 
