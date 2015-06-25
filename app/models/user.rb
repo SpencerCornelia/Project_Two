@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
 	
 	has_many :rooms
 
-<<<<<<< HEAD
 	validates :email, uniqueness: true, presence: true
 	validates :password, length: { minimum: 7}, confirmation: true
 	validates :password_confirmation, length: {minimum: 7}, presence: true

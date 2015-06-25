@@ -12,21 +12,11 @@
 	<%= render partial: "layouts/navbar" %>
 	<% end %>
 	
-	<div class="container">
-		
 		 <% if flash[:notice] %>
 		   <div class="alert alert-danger col-md-12" role="alert">
 		     <%= flash[:notice] %>
 		   </div>
 		 <% end %>
 	  <%= yield %>
-	</div>
-
-	<% console %>
-	
-	<script type="text/javascript">
-	  app.readyAll();
-	</script>
-
 </body>
 </html>
