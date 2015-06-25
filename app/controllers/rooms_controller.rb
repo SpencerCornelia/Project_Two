@@ -1,6 +1,16 @@
 class RoomsController < ApplicationController
 	
-	before_action :current_user
+	# include ActionController::Live
+
+	# def stream
+	#   response.headers['Content-Type'] = 'text/event-stream'
+	#   100.times {
+	#     response.stream.write "hello world\n"
+	#     sleep 1
+	#   }
+	# ensure
+	#   response.stream.close
+	# end
 
 	before_action :current_user
 
@@ -57,3 +67,7 @@ class RoomsController < ApplicationController
 	end
 
 end
+
+
+
+
