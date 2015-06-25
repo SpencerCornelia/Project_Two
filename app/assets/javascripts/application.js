@@ -78,7 +78,7 @@ $(function () {
 	});
 
 })
-app.readyAll();
+// app.readyAll();
 
 	//Form EL
 	console.log("setting ELs for register forms")
