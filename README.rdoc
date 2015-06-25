@@ -1,7 +1,7 @@
 = [This App]
 
 == Practical Use
-[This App] was created in order to assist instructors in our WDI program at GA to know when students are in need.  After creating a room, an instructor can create a button with a custom title and a custom amount of clicks needed to set off an event.  Using Twilio's API, the instructor will receive a text message with a body of text recognizing the students' need.  Our intention for this app was to allow instructors to receive a warning when students needed a break or were getting stuck on a problem.
+This App was created in order to assist instructors in our WDI program at GA to know when students are in need.  After creating a room, an instructor can create a button with a custom title and a custom amount of clicks needed to set off an event.  Using Twilio's API, the instructor will receive a text message with a body of text recognizing the students' need.  Our intention for this app was to allow instructors to receive a warning when students needed a break or were getting stuck on a problem.
 
 == Inspiration
 The inspiration for [This App] came from the many moments in class when a majority of students were in need of a mental break or were struggling keeping up with the pace of the lecture.  We realized that it would be nice to be able to alert the instructor in an anonymous way that we were in need of a break or a second to digest the material.
@@ -21,4 +21,5 @@ The inspiration for [This App] came from the many moments in class when a majori
 3.  Ensure PostgreSQL is running 
 4.  Open a new tab and run your rails server by typing 'rails s' in the terminal
 5.  Open up the app in your text editor
+6.  Go to 'http://localhost:3000'
 
