@@ -21,5 +21,5 @@ The inspiration for [This App] came from the many moments in class when a majori
 3.  Ensure PostgreSQL is running 
 4.  Open a new tab and run your rails server by typing 'rails s' in the terminal
 5.  Open up the app in your text editor
-6.  Go to 'http://localhost:3000'
+6.  Go to 'localhost:3000'
 
