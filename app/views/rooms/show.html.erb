@@ -1,34 +1,71 @@
 <h2><%= @room.name %></h2>
 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"></script>
+
+<%= javascript_tag do |b| %>
+
+$( init );
+ 
+function init() {
+  $('.button_drag').draggable();
+  $('.makeMeDroppable').droppable( {
+    drop: handleDropEvent
+  } ); 
+}
+
+function handleDropEvent( event, ui ) {
+  var draggable = ui.draggable;
+  var current_button = draggable.attr('data-button-id')
+  var num = parseInt(current_button);
+  console.log(num);
+  alert( 'The square with class "' + draggable.attr('data-button-id') + '" was dropped onto me!' );
+ 
+}
+
+
+<% end %>
+
+
 <% if current_user == room_owner %>
 <%= render partial: 'buttons/form', locals: {button: @button} %>
+<div class="row">
+    <div class="col-xs-3 col-xs-offset-9 makeMeDroppable">
+          <div class="glyphicon glyphicon-trash" aria-hidden="true">
+          delete </div>
+    </div>
+</div>
 <% end %>
+
 
 <% colors = ["blue_button", "yellow_button", "red_button"] %>
 
 <% @room.buttons.each do |b| %>
-	
-	<% if session[:button].include?(b.id) then voted = "voted_button" %>
-	<% else voted = "not_voted_button" %>
-	<% end %>
-	<% unless b.votes <= 0 %>
-	
-	<div class="button_container">
-		<% if (b.votes <= 5) then varies = "red_button" %>
-		<% elsif (b.votes > 5 and b.votes <= 15) then varies = "yellow_button" %>
-		<% else varies = "blue_button" %>
-		<% end %>
-			<div data-button-id="<%= b.id %>" class="btn btn-sm btn-primary col-xs-3 room_buttons #{varies}">
-				<div><%= b.condition %></div>
-			<% if current_user == room_owner %>
-			<%= b.votes %>
-			</div>
-			<div>
-			<%= button_to "X", button_path(b), method: :delete, class: "btn btn-danger col-xs-1 delete_buttons" %>
-			</div>
 
-			<%= button_to "", "", class: "#{varies} btn col-xs-1 status_buttons" %>
-			<% end %>
-	</div>	
-	<% end %>
+    <% session[:button] = session[:button] || [] %>
+    <% if session[:button].include?(b.id) then voted = "voted_button" %>
+    <% else voted = "not_voted_button" %>
+    <% end %> 
+    <% unless b.votes <= 0 %>
+    
+    <div class="button_container">
+        <% if (b.votes <= 5) then varies = "red_button" %>
+        <% elsif (b.votes > 5 and b.votes <= 15) then varies = "yellow_button" %>
+        <% else varies = "blue_button" %>
+        <% end %>
+
+            <div data-button-id="<%= b.id %>" class=" button_drag btn btn-sm btn-primary col-xs-3 room_buttons #{varies}">
+                <div><%= b.condition %></div>
+            <% if current_user == room_owner %>
+            <%= b.votes %>
+            </div>
+            <div>
+            <%= button_to "X", button_path(b), method: :delete, class: "btn btn-danger col-xs-1 delete_buttons" %>
+            </div>
+
+            <%= button_to "", "", class: "#{varies} btn col-xs-1 status_buttons" %>
+            <% end %>
+    </div>
+    
+    <% end %>
 <% end %>
