@@ -17,7 +17,7 @@
 		<!-- COME BACK TO THIS AFTER USER LOGIN IS FINISHED -->
 		<%= f.hidden_field :room_id, :value => @room.id %>
 		<div class="form-group">
-			<%= f.submit "add", class: "btn btn-sm btn-primary"%>
+			<%= f.submit "add", class: "btn btn-sm btn-primary", id: "add_button_btn" %>
 		</div>
 	</div>
 <% end %>

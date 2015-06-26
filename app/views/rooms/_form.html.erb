@@ -6,7 +6,7 @@
 	<!-- COME BACK TO THIS AFTER USER LOGIN IS FINISHED -->
 	<%= f.hidden_field :user_id, :value => params[:id] %>
 	<div class="form-group col-xs-12">
-		<%= f.submit "Add Room", class: "btn btn-sm btn-primary col-sm-2"%>
+		<%= f.submit "Add Room", class: "btn btn-sm btn-primary col-sm-2", id: "add_room_button" %>
 	</div>
 <% end %>
 

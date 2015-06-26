@@ -7,32 +7,30 @@
  *= require_self
  */
 
- h3 {
-
- }
-
  .delete_buttons {
  	max-height: 1.5em;
  	max-width: 1.5em;
- 	border: 2px solid pink;
  	margin-left: -1px;
  	margin-right: 14px;
  	margin-top: 3px;
- 	padding-right: 1.25em;
+ 	padding-right: 1.5em;
  	padding-bottom: 1.75em;
  	text-align: center;
- 	color: #DAF5FF;
+ 	color: white;
   background-color: #FFBFA0;
-
    a {
    	color: white;
    }
  }
 
+ .delete_buttons:hover {
+ 	background-color: RGBA(225, 161, 130, 1);
+ }
+
  .room_link {
  	height: 1.75em;
  	background-color: RGBA(81, 172, 202, 1);
- 	border: 2px solid #DAF5FF;
+ 	padding: none;
  	color: white;
  	text-align: center;
  	padding-top: 5px;
@@ -41,10 +39,20 @@
  }
 
  .room_link:hover {
- 	background-color: RGBA(183, 212, 252, 1);
+ 	text-decoration: none;
+ 	background-color: RGBA(51, 142, 172, 1);
  	color:white;
  }
 
  .add_room_form {
  	margin-top: 30px;
+ }
+
+ #add_room_button {
+ 	background-color: RGBA(153, 182, 222, 1);
+ 	border: none;
+ }
+
+ #add_room_button:hover {
+ 	background-color: RGBA(123, 152, 192, 1);
  }

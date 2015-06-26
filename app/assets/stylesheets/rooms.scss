@@ -32,7 +32,7 @@
 	font-weight: normal;
 	min-width: 90px;
 	padding-top: 50px;
-	background-color: RGBA(68, 255, 210, 1);
+	background-color: RGBA(38, 225, 180, 1);
 	border: none;
 	margin: 5px;
 	
@@ -100,4 +100,17 @@
 
 .voted_button {
 	background-color: rgba(149, 165, 166,1.0);
+}
+
+#add_button_btn {
+	background-color: RGBA(153, 182, 222, 1);
+	border: none;
+}
+
+#add_button_btn:hover {
+	background-color: RGBA(123, 152, 192, 1);
+}
+
+.alert-danger {
+  top: 50px;
 }
