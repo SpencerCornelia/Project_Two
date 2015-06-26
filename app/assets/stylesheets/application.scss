@@ -82,5 +82,30 @@ html{
            .side-collapse.in {
                width:0;
            }
+
+           #logo {
+             display: block;
+             position: relative;
+             margin: 0 auto;
+           }
        }
 
+#logo {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+}
+
+
+.alert-danger {
+  z-index: 5;
+  max-width: 80%;
+  margin: 0 auto;
+  // margin-top: -54px;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  opacity: 0.9;
+}
