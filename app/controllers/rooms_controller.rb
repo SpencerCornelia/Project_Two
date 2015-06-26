@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+	include ActionController::Live
 
 	before_action :current_user
 
@@ -26,6 +27,8 @@ class RoomsController < ApplicationController
 		end
 
 	end
+
+
 
 	def show
 		set_room

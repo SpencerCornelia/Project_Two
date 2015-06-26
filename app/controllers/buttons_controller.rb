@@ -11,9 +11,11 @@ class ButtonsController < ApplicationController
 	end
 
 	def create
+		response.headers["Content-Type"] = "text/javascript"
 		@button = Button.new(button_params)
 		  if @button.save
 		  	#may need to do this with ajax later
+		  	$redis.publish('buttons.create', @button.to_json)
 		    redirect_to "/rooms/#{Room.find(@button.room_id).random_url}"
 		    # redirect_to root_path
 		  else

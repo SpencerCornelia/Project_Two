@@ -17,4 +17,20 @@ module RoomsHelper
 		@room.random_url = SecureRandom.hex(10)
 	end	
 
+	def events
+		response.headers["Content-Type"] = "text/event-stream"
+		redis = Redis.new
+		redis.psubscribe('buttons.*') do |on|
+			on.pbutton do |pattern, event, data|
+				response.stream.write("event: #{event}\n")
+				response.stream.write("data: #{data}\n\n")
+			end
+		end
+	rescue IOError
+		logger.info "Stream closed"
+	ensure
+		redis.quit
+		response.stream.close
+	end
+
 end

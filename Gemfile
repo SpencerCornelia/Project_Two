@@ -43,6 +43,9 @@ end
 
 gem 'authy'
 
+# gem 'puma'
+gem 'redis'
+
 # Use Unicorn as the app server
 gem 'unicorn-rails'
 

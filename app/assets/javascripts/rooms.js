@@ -15,6 +15,9 @@ $(function () {
 	// 	   });
 	// };
 
+	source = new EventSource()
+	source.addEventListener 'message', (e) 
+
 	$(".room_buttons").on("click", function (e) {
 		console.log('clicked');
 		var self = e.target;
