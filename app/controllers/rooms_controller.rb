@@ -30,7 +30,10 @@ class RoomsController < ApplicationController
 	def show
 		set_room
 		@button = Button.new
-		render :show
+		respond_to do |f|
+			f.html { render :show }
+			f.json { render json: @room.buttons }
+		end
 	end
 
 	def edit

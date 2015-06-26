@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
+
 	it "should validate presence of email" do
 		u = User.new({name: "Bob",
 						 email: nil, 
@@ -83,4 +84,7 @@ RSpec.describe User, type: :model do
 		expect(t.save).to eq(false) 
 
 end
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4fde0a958860fe2cef15d88b6bb799ad588336cb

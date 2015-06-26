@@ -32,13 +32,14 @@
 	font-weight: normal;
 	min-width: 90px;
 	padding-top: 50px;
-	background-color: orange;
+	background-color: RGBA(38, 225, 180, 1);
 	border: none;
+	margin: 5px;
 	
 }
 
 .room_buttons:hover {
-	background-color: black;
+	background-color: grey;
 }
 
 .button_container {
@@ -57,19 +58,19 @@
 }
 
 .blue_button {
-	background-color: #2980b9;
+	background-color: #87F6FF;
 }
 
 .green_button {
-	background-color: #16a085;
+	background-color: #44FFD2;
 }
 
 .yellow_button {
-	background-color: #f1c40f;
+	background-color: RGBA(81, 172, 202, 1);
 }
 
 .red_button {
-	background-color: #e74c3c;
+	background-color: #FFBFA0;
 }
 
 #notifications {
@@ -99,4 +100,17 @@
 
 .voted_button {
 	background-color: rgba(149, 165, 166,1.0);
+}
+
+#add_button_btn {
+	background-color: RGBA(153, 182, 222, 1);
+	border: none;
+}
+
+#add_button_btn:hover {
+	background-color: RGBA(123, 152, 192, 1);
+}
+
+.alert-danger {
+  top: 50px;
 }

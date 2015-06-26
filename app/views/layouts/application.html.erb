@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ProjectTwo</title>
+  <title>voteIt</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= csrf_meta_tags %>
 </head>
@@ -12,8 +14,7 @@
 	<%= render partial: "layouts/navbar" %>
 	<% end %>
 	
-	<div class="container">
-		
+	<div id="room-con" class="container-fluid">
 		 <% if flash[:notice] %>
 		   <div class="alert alert-danger col-md-12" role="alert">
 		     <%= flash[:notice] %>
@@ -21,10 +22,9 @@
 		 <% end %>
 	  <%= yield %>
 	</div>
-	
-	<script type="text/javascript">
-	  app.readyAll();
-	</script>
 
+	  <script type="text/javascript">
+	  app.readyAll();
+	  </script>
 </body>
 </html>

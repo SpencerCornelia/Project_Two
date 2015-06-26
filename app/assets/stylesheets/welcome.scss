@@ -29,7 +29,7 @@ body {
 	transition: all 0.1s linear;
 }
 .panel-login>.panel-heading a.active{
-	color: #029f5b;
+	color: #53A3CD;
 	font-size: 18px;
 }
 .panel-login>.panel-heading hr{
@@ -100,13 +100,8 @@ body {
 .btn-register:hover,
 .btn-register:focus {
 	color: #fff;
-	background-color: #1CA347;
-	border-color: #1CA347;
-}
-
-#register_button {
-	background-color: RGBA(95, 158, 160, 1);
-	color: RGBA(255, 255, 255, .7)
+	background-color: #53A3CD;
+	border-color: #53A3CD;
 }
 
 .contactHeader {
@@ -131,3 +126,78 @@ body {
 	margin: 0 auto;
 	text-align: center;
 }
+
+div#welcomeIndex.container-fluid {
+	background: url("https://i.imgur.com/wZG39Iz.jpg") no-repeat center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: absolute;
+	width: 100%;
+	height: 120vh;
+    display: block; 
+   	margin-top: -50px;
+    opacity: 0.8;
+    margin-left: -15px; 
+}
+
+#appName {
+	font-family: 'Lobster', cursive;
+	color: white;
+    text-align: center;
+    font-size: 70px;
+    font-weight: bolder;
+    margin-bottom: 12px;
+    margin-top: 64px;
+}
+
+#landingBlurb {
+	text-align: center;
+    color: white;
+    margin-bottom: 50px;
+    font-size: x-large;
+    font-weight: lighter;
+}
+
+.alert-danger {
+	z-index: 5;
+	margin-top: -54px;
+	opacity: 0.7;
+}
+
+.circle {
+	position: relative;
+	display: inline-block;
+	background: RGBA(38, 225, 180, 1);
+	margin-top: 30px;
+    margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+}
+
+.aboutHeader {
+	position: absolute;
+    top: 50%;
+    color: white;
+    display: block;
+    transform: translate(0, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+}
+
+.aboutContent {
+	font-size: 20px;
+    margin-top: 60px
+}
+
+.blurb {
+	font-size: larger;
+}
+
+.links {
+	font-size: larger;
+}
+
+

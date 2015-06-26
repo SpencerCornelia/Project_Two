@@ -20,14 +20,18 @@
  @import "bootstrap";
 
  // COLOR PALLETE
- $color-primary: #2C3E50;
- $color-secodary: #617487 ;
- $color-tertiary: #42586E ;
+ $color-primary: #616163;
+ $color-secodary: #617487;
+ $color-tertiary: #42586E;
  $white: #FFF;
 
  $color-primary-rgba: rgba( 44, 62, 80,1);
  $color-secodary-rgba: rgba( 97,116,135,1);
  $color-tertiary-rgba: rgba( 66, 88,110,1);
+
+ body {
+  font-family: lato;
+ }
 
  // Navbar/Sidebar
  .navbar, .navbar-fixed-top, .navbar-inverse, .navbar-inverse .navbar-nav {
@@ -38,10 +42,20 @@
      color: $white;
    }
  }
+html{
+           height: 100%;
+               margin: 0;
 
+
+
+}
  body {
            padding-top: 50px;
            position: relative;
+           height: 100%;
+          margin: 0;
+
+
        }
 
        pre {
@@ -70,4 +84,32 @@
            .side-collapse.in {
                width:0;
            }
+
+           #logo {
+             display: block;
+             position: relative;
+             margin: 0 auto;
+           }
        }
+
+#logo {
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+  font-weight: bolder;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+}
+
+.alert-danger {
+  z-index: 5;
+  max-width: 80%;
+  margin: 0 auto;
+  // margin-top: -54px;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  opacity: 0.9;
+}

@@ -8,18 +8,16 @@
 	<%= render partial: 'rooms/form', locals: {room: @room} %>
 </div>
 
-
-
-<div class="col-xs-12">
-	<h4>Your Current Rooms</h4>
-	<% @user.rooms.each do |r| %>
-		<div class="room_container">
-			<h4><%= link_to r.name, "/rooms/#{r.random_url}", class: "col-xs-6 room_link" %></h4>
-			<div>
-			<%= link_to "X", room_path(r), method: :delete, class: "btn btn-danger col-xs-1 delete_buttons" %>
+	<div class="col-xs-12">
+		<h4>Your Current Rooms</h4>
+		<% @user.rooms.each do |r| %>
+			<div class="room_container">
+				<h4><%= link_to r.name, "/rooms/#{r.random_url}", class: "col-xs-6 col-md-4 room_link" %></h4>
+				<div>
+				<%= link_to "X", room_path(r), method: :delete, class: "btn btn-danger col-xs-1 delete_buttons" %>
+				</div>
 			</div>
-		</div>
-	<% end %>
-</div>
+		<% end %>
+	</div>
 
 
