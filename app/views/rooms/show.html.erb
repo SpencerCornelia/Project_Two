@@ -3,6 +3,7 @@
 </div>
 
 <h2><%= @room.name %></h2>
+<hr>
 
 <% if current_user == room_owner %>
 <%= render partial: 'buttons/form', locals: {button: @button} %>
@@ -37,9 +38,11 @@
 				</div>
 
 				<% if current_user == room_owner %>
-					<div class="col-xs-1">
+					<div class="col-xs-1 delete_div">
 						<%= button_to "X", button_path(b), method: :delete, class: "btn btn-danger col-xs-1 delete_buttons" %>
+						<div class="votes_class">
 						<%= b.votes %>
+						</div>
 					</div>
 				<% end %>
 			</div>	
@@ -48,4 +51,16 @@
 </div>
 
 
-<%= javascript_include_tag 'rooms' %>  
+
+<% if current_user == nil or current_user != room_owner %>
+	<%= javascript_include_tag 'rooms' %>
+<% end %>
+
+<% if current_user == room_owner %>
+	<%= javascript_include_tag 'user_rooms' %>
+<% end %>
+
+<script type="text/javascript">
+
+	
+</script>

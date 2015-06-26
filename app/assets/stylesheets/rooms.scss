@@ -35,7 +35,6 @@
 	background-color: RGBA(38, 225, 180, 1);
 	border: none;
 	margin: 5px;
-	
 }
 
 .room_buttons:hover {
@@ -113,4 +112,28 @@
 
 .alert-danger {
   top: 50px;
+}
+
+.votes {
+	position: relative;
+	margin-bottom: -20px;
+}
+
+.deletes {
+	display:inline-block;
+}
+
+@media screen and (max-width: 768px) {
+	#button-con {
+		margin: auto;
+		// text-align: center;
+		padding-left: 25vw;
+	}
+
+	.votes {
+		position: relative;
+		// display: block;
+		margin-bottom: 22vh;
+	}
+
 }
