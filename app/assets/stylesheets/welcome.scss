@@ -29,7 +29,7 @@ body {
 	transition: all 0.1s linear;
 }
 .panel-login>.panel-heading a.active{
-	color: #029f5b;
+	color: #53A3CD;
 	font-size: 18px;
 }
 .panel-login>.panel-heading hr{
@@ -104,8 +104,6 @@ body {
 	border-color: #53A3CD;
 }
 
-
-
 .contactHeader {
     font-size: -webkit-xxx-large;
     font-weight: bolder;
@@ -143,9 +141,10 @@ div#welcomeIndex.container-fluid {
 }
 
 #appName {
+	font-family: 'Lobster', cursive;
 	color: white;
     text-align: center;
-    font-size: -webkit-xxx-large;
+    font-size: 70px;
     font-weight: bolder;
     margin-bottom: 12px;
     margin-top: 64px;
@@ -157,6 +156,48 @@ div#welcomeIndex.container-fluid {
     margin-bottom: 50px;
     font-size: x-large;
     font-weight: lighter;
+}
+
+.alert-danger {
+	z-index: 5;
+	margin-top: -54px;
+	opacity: 0.7;
+}
+
+.circle {
+	position: relative;
+	display: inline-block;
+	background: RGBA(38, 225, 180, 1);
+	margin-top: 30px;
+    margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+}
+
+.aboutHeader {
+	position: absolute;
+    top: 50%;
+    color: white;
+    display: block;
+    transform: translate(0, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+}
+
+.aboutContent {
+	font-size: 20px;
+    margin-top: 60px
+}
+
+.blurb {
+	font-size: larger;
+}
+
+.links {
+	font-size: larger;
 }
 
 
