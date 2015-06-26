@@ -143,9 +143,10 @@ div#welcomeIndex.container-fluid {
 }
 
 #appName {
+	font-family: 'Lobster', cursive;
 	color: white;
     text-align: center;
-    font-size: -webkit-xxx-large;
+    font-size: 70px;
     font-weight: bolder;
     margin-bottom: 30px;
     margin-top: 50px;
@@ -164,3 +165,41 @@ div#welcomeIndex.container-fluid {
 	margin-top: -54px;
 	opacity: 0.7;
 }
+
+.circle {
+	position: relative;
+	display: inline-block;
+	background: #29A669;
+	margin-top: 30px;
+    margin-left: auto;
+	margin-right: auto;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+}
+
+.aboutHeader {
+	position: absolute;
+    top: 50%;
+    color: white;
+    display: block;
+    transform: translate(0, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: x-large;
+}
+
+.aboutContent {
+	font-size: 20px;
+    margin-top: 60px
+}
+
+.blurb {
+	font-size: larger;
+}
+
+.links {
+	font-size: larger;
+}
+
+
